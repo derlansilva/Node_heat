@@ -9,3 +9,4 @@
 [] #8 configurar url de redirecionamento do github
 [] #9 yarn add axios // para usar uma api externa
 [] #10 yarn add jsonwebtoken
+[] #11 yarn prisma migrate dev --criar ou alterar as auterações no banco

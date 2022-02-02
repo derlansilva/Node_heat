@@ -10,6 +10,8 @@
  */
 
 import axios from 'axios'
+import prismaClient from '../prisma'
+
 
 interface IAccesTokenResponse{
 
@@ -18,7 +20,7 @@ interface IAccesTokenResponse{
 }
 
 interface IUserResponse{
-    avartar_url : string,
+    avatar_url : string,
     login : string,
     id: number,
     name : string
@@ -46,6 +48,27 @@ class AuthenticateUserService{
                 authorization: `Bearer ${accessTokenResponse.access_token}`
             }
         })
+
+        const { login , avatar_url , id , name} = response.data
+        //buscando o usuario se o github_id = id
+        let user = await prismaClient.user.findFirst({
+            where: {
+                github_id: id
+            }
+        })
+
+        //se o usuario não existir vamos criar ele
+        if(!user){
+            user = await prismaClient.user.create({
+                data: {
+                    github_id: id,
+                    login,
+                    avatar_url,
+                    name
+
+                }
+            })
+        }
 
         return response.data;
     }
