@@ -16,3 +16,4 @@
 [] yarn add @types/socket.io
 [] yarn add cors ---- yarn add @types/cors -D
 [] buscando as 3 ultimas mensagens
+[] #14 profile user service
