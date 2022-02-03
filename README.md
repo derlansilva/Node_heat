@@ -15,3 +15,4 @@
 [] yarn add socket.io 
 [] yarn add @types/socket.io
 [] yarn add cors ---- yarn add @types/cors -D
+[] buscando as 3 ultimas mensagens
