@@ -11,3 +11,7 @@
 [] #10 yarn add jsonwebtoken
 [] #11 yarn prisma migrate dev --criar ou alterar as auterações no banco
 [] #12 yarn prisma studio , abrir gerenciador do prisma com as tabelas do banco de dados
+[] #13 configurar websocket
+[] yarn add socket.io 
+[] yarn add @types/socket.io
+[] yarn add cors ---- yarn add @types/cors -D
